@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>賃貸vs購入コスト比較 - 生涯コストを無料シミュレーション</title>
+<meta name="description" content="年齢・年収・家族構成から賃貸と住宅購入の生涯コストを比較。ローン返済・管理費・売却想定価格を含めた総合判断を無料で診断します。">
+<meta property="og:title" content="賃貸vs購入コスト比較 | 生涯コストを無料シミュレーション">
+<meta property="og:description" content="賃貸と住宅購入どちらがお得か。生涯コスト・ライフスタイルで総合診断。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://appadaycreator.github.io/rental-vs-buy-advisor/">
+<meta property="og:image" content="https://appadaycreator.github.io/rental-vs-buy-advisor/ogp.png">
+<link rel="canonical" href="https://appadaycreator.github.io/rental-vs-buy-advisor/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"賃貸vs購入コスト比較","description":"賃貸と住宅購入の生涯コストを比較診断","url":"https://appadaycreator.github.io/rental-vs-buy-advisor/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}}</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8427583028015858" crossorigin="anonymous"></script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","s3t9vl8h3v");</script>
+<script>window.onerror=function(m,s,l,c,e){console.warn('Error:',m);return true;};window.addEventListener('unhandledrejection',function(e){console.warn('Rejection:',e.reason);});</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#1e40af 100%);min-height:100vh;}
+  .card{background:white;border-radius:1rem;box-shadow:0 4px 24px rgba(0,0,0,0.15);}
+  .btn-primary{background:#1d4ed8;color:white;border:none;border-radius:.75rem;padding:.875rem 2rem;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .2s;width:100%;display:block;text-align:center;}
+  .btn-primary:hover{background:#1e40af;transform:translateY(-1px);}
+  input[type=range]{width:100%;accent-color:#1d4ed8;}
+  .result-box{border-radius:.75rem;padding:1rem;margin-bottom:.75rem;}
+  .tag{display:inline-block;font-size:.75rem;font-weight:700;padding:.2rem .7rem;border-radius:9999px;}
+</style>
+</head>
+<body class="font-sans">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="max-w-xl mx-auto px-4 py-10">
+  <div class="text-center mb-8">
+    <div class="text-6xl mb-4">🏠</div>
+    <h1 class="text-2xl font-bold text-white mb-2">賃貸 vs 購入コスト比較</h1>
+    <p class="text-blue-200 text-sm">生涯コストを計算してあなたに最適な選択を診断</p>
+  </div>
+
+  <div class="card p-6 mb-6">
+    <h2 class="font-bold text-gray-800 mb-4 text-sm border-b pb-2">📋 あなたの状況を入力してください</h2>
+
+    <div class="space-y-5">
+      <div>
+        <label class="text-sm font-bold text-gray-700">現在の年齢</label>
+        <div class="flex items-center gap-3 mt-1">
+          <input type="range" id="age" min="22" max="60" value="35" oninput="document.getElementById('age-v').textContent=this.value+'歳'">
+          <span class="text-blue-700 font-bold w-16 text-sm" id="age-v">35歳</span>
+        </div>
+      </div>
+
+      <div>
+        <label class="text-sm font-bold text-gray-700">世帯年収（万円）</label>
+        <div class="flex items-center gap-3 mt-1">
+          <input type="range" id="income" min="300" max="2000" step="50" value="600" oninput="document.getElementById('income-v').textContent=this.value+'万円'">
+          <span class="text-blue-700 font-bold w-20 text-sm" id="income-v">600万円</span>
+        </div>
+      </div>
+
+      <div>
+        <label class="text-sm font-bold text-gray-700">現在の家賃（万円/月）</label>
+        <div class="flex items-center gap-3 mt-1">
+          <input type="range" id="rent" min="5" max="30" value="12" oninput="document.getElementById('rent-v').textContent=this.value+'万円'">
+          <span class="text-blue-700 font-bold w-16 text-sm" id="rent-v">12万円</span>
+        </div>
+      </div>
+
+      <div>
+        <label class="text-sm font-bold text-gray-700">購入を検討している物件価格（万円）</label>
+        <div class="flex items-center gap-3 mt-1">
+          <input type="range" id="price" min="1000" max="10000" step="100" value="4000" oninput="document.getElementById('price-v').textContent=(this.value/100).toFixed(0)+'百万円 ('+this.value+'万円)'">
+          <span class="text-blue-700 font-bold w-32 text-sm" id="price-v">40百万円 (4000万円)</span>
+        </div>
+      </div>
+
+      <div>
+        <label class="text-sm font-bold text-gray-700">住宅ローン金利（%）</label>
+        <div class="flex items-center gap-3 mt-1">
+          <input type="range" id="rate" min="0.4" max="3.5" step="0.1" value="1.5" oninput="document.getElementById('rate-v').textContent=parseFloat(this.value).toFixed(1)+'%'">
+          <span class="text-blue-700 font-bold w-16 text-sm" id="rate-v">1.5%</span>
+        </div>
+      </div>
+
+      <div>
+        <label class="text-sm font-bold text-gray-700">居住予定期間</label>
+        <select id="period" class="w-full border border-gray-300 rounded-lg p-2 mt-1 text-sm">
+          <option value="10">10年</option>
+          <option value="20" selected>20年</option>
+          <option value="30">30年</option>
+          <option value="35">35年（完済まで）</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm font-bold text-gray-700">家族構成・将来計画</label>
+        <select id="family" class="w-full border border-gray-300 rounded-lg p-2 mt-1 text-sm">
+          <option value="single">単身・DINKs（転勤・転職の可能性あり）</option>
+          <option value="family" selected>夫婦＋子ども予定（安定を重視）</option>
+          <option value="settled">子育て終了・定住希望</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn-primary mt-6" onclick="calculate()">生涯コストを比較する →</button>
+  </div>
+
+  <div id="results" style="display:none;">
+    <div class="card p-6 mb-4">
+      <h2 class="font-bold text-gray-800 mb-4">📊 生涯コスト比較（<span id="r-period"></span>間）</h2>
+
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div class="result-box bg-blue-50 border border-blue-200 text-center">
+          <div class="text-xs text-blue-600 font-bold mb-1">🏠 賃貸</div>
+          <div class="text-2xl font-bold text-blue-700" id="r-rent-total"></div>
+          <div class="text-xs text-gray-500 mt-1">家賃合計</div>
+        </div>
+        <div class="result-box bg-green-50 border border-green-200 text-center">
+          <div class="text-xs text-green-600 font-bold mb-1">🏡 購入</div>
+          <div class="text-2xl font-bold text-green-700" id="r-buy-total"></div>
+          <div class="text-xs text-gray-500 mt-1">実質コスト</div>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-xl p-4 mb-3">
+        <div class="font-bold text-gray-800 mb-2" id="r-verdict-label"></div>
+        <p class="text-sm text-gray-600" id="r-verdict-desc"></p>
+      </div>
+
+      <div class="space-y-2 text-sm">
+        <div class="flex justify-between"><span class="text-gray-600">月々ローン返済額</span><strong id="r-monthly-pay" class="text-gray-800"></strong></div>
+        <div class="flex justify-between"><span class="text-gray-600">頭金目安（物件価格の10%）</span><strong id="r-downpay" class="text-gray-800"></strong></div>
+        <div class="flex justify-between"><span class="text-gray-600">購入時諸費用（物件価格の3〜5%）</span><strong id="r-misc" class="text-gray-800"></strong></div>
+        <div class="flex justify-between"><span class="text-gray-600">管理費・修繕費（年間）</span><strong class="text-gray-800">約24〜36万円</strong></div>
+      </div>
+    </div>
+
+    <div class="card p-6 mb-4">
+      <h3 class="font-bold text-gray-800 mb-3">🔑 あなたへの判断アドバイス</h3>
+      <div id="r-advice-list" class="space-y-2"></div>
+    </div>
+
+    <div class="card p-6 mb-4">
+      <h3 class="font-bold text-gray-800 mb-3">🏦 住宅ローンを比較・検討する</h3>
+      <div class="space-y-3">
+        <a href="https://www.amazon.co.jp/s?k=住宅+賃貸+マイホーム+購入+本&tag=appadaycrea0f-22" target="_blank" rel="noopener" class="block bg-yellow-400 text-gray-900 font-bold py-3 rounded-xl text-center text-sm hover:bg-yellow-500 transition">Amazonで住宅購入の本を探す →</a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVCO8+3ORU2Y+5JTC+5YRHE" target="_blank" rel="noopener sponsored" class="block bg-blue-600 text-white font-bold py-3 rounded-xl text-center text-sm hover:bg-blue-700 transition">ヨンデミーでマネー・不動産の知識を深める →</a>
+        <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4AVCO8+3ORU2Y+5JTC+5YRHE" alt="">
+        <p class="text-xs text-gray-400 text-center">Amazonアソシエイトプログラム参加中</p>
+      </div>
+    </div>
+
+    <div class="card p-4 mb-4 text-xs space-y-1">
+      <div class="font-bold text-gray-600 mb-1">関連診断ツール</div>
+      <div><a href="/housing-loan-simulator/" class="text-blue-600 underline">住宅ローン返済シミュレーター →</a></div>
+      <div><a href="/renovation-loan-advisor/" class="text-blue-600 underline">リフォームローン比較診断 →</a></div>
+      <div><a href="/fire-calculator/" class="text-blue-600 underline">FIRE計算機（資産形成との比較）→</a></div>
+      <div><a href="/household-budget-analyzer/" class="text-blue-600 underline">家計診断ツール →</a></div>
+      <div><a href="/freelance-tax-advisor/" class="text-blue-600 underline">住宅ローン控除の節税効果を確認 →</a></div>
+    </div>
+
+    <button class="btn-primary" style="background:#6b7280;" onclick="reset()">もう一度計算する</button>
+  </div>
+</div>
+
+<script>
+function calculate(){
+  var age=parseInt(document.getElementById('age').value);
+  var income=parseInt(document.getElementById('income').value);
+  var rent=parseInt(document.getElementById('rent').value);
+  var price=parseInt(document.getElementById('price').value);
+  var rate=parseFloat(document.getElementById('rate').value)/100/12;
+  var period=parseInt(document.getElementById('period').value);
+  var family=document.getElementById('family').value;
+
+  // 賃貸コスト（毎年1%家賃上昇想定）
+  var rentTotal=0;
+  var r=rent*10000;
+  for(var i=0;i<period;i++){rentTotal+=r*12;r*=1.01;}
+
+  // 購入コスト
+  var loanAmt=price*10000*0.9; // 90%ローン
+  var n=35*12; // 35年ローン
+  var monthlyPay=rate===0?loanAmt/n:loanAmt*rate*Math.pow(1+rate,n)/(Math.pow(1+rate,n)-1);
+  var totalLoanCost=monthlyPay*n;
+  var maintenanceCost=period*30*10000; // 管理費・修繕積立・固定資産税 年30万
+  var downpay=price*10000*0.1;
+  var misc=price*10000*0.04;
+  var sellVal=price*10000*Math.pow(0.99,period); // 1%/年 資産価値下落想定
+
+  // 実質購入コスト = 頭金 + 諸費用 + ローン利息分 + 管理費 - 売却益
+  var interestTotal=totalLoanCost-loanAmt;
+  var buyCost=downpay+misc+interestTotal+maintenanceCost;
+  var netBuyCost=buyCost-(sellVal-loanAmt*0.5>0?sellVal-loanAmt*0.5:0); // 残債考慮
+
+  document.getElementById('r-period').textContent=period+'年';
+  document.getElementById('r-rent-total').textContent=Math.round(rentTotal/10000/100)/10+'千万円';
+  document.getElementById('r-buy-total').textContent=Math.round(netBuyCost/10000/100)/10+'千万円';
+  document.getElementById('r-monthly-pay').textContent=Math.round(monthlyPay/10000*10)/10+'万円/月';
+  document.getElementById('r-downpay').textContent=Math.round(downpay/10000)+'万円';
+  document.getElementById('r-misc').textContent=Math.round(misc/10000)+'万円';
+
+  var diff=rentTotal-netBuyCost;
+  var vl=document.getElementById('r-verdict-label');
+  var vd=document.getElementById('r-verdict-desc');
+  if(diff>0){
+    vl.innerHTML='✅ <span style="color:#16a34a">購入の方がお得（'+Math.round(diff/10000/100)/10+'千万円安い）</span>';
+    vd.textContent=period+'年間の比較では、購入の方がトータルコストを抑えられる見込みです。ただし頭金や諸費用の初期負担にご注意ください。';
+  } else {
+    vl.innerHTML='🏠 <span style="color:#2563eb">賃貸の方がコスト効率が良い（'+Math.round(-diff/10000/100)/10+'千万円安い）</span>';
+    vd.textContent='居住期間'+period+'年では、賃貸の方がトータルコストが低い計算になります。ライフスタイルや転勤可能性も考慮して判断しましょう。';
+  }
+
+  var advices=[];
+  if(income<500)advices.push({icon:'⚠️',text:'年収からみると月々ローン返済（'+Math.round(monthlyPay/10000*10)/10+'万円）は年収の'+Math.round(monthlyPay*12/income/10000*100)+'%です。25%以下が安心ライン。'});
+  if(family==='single')advices.push({icon:'🎯',text:'転勤・転職の可能性がある場合、賃貸の柔軟性が大きなメリット。購入後は売却に2〜3年かかる場合も。'});
+  if(family==='family')advices.push({icon:'👶',text:'子育て期に自分の持ち家があると安定感が増します。学区・環境も含めた長期目線で検討を。'});
+  if(period<15)advices.push({icon:'📅',text:'15年未満の居住では売却損が出やすい。短期なら賃貸が有利なケースが多いです。'});
+  advices.push({icon:'💰',text:'住宅ローン控除（13年間・最大455万円）や住宅取得等資金の非課税制度を活用すると実質コストがさらに下がります。'});
+
+  var al=document.getElementById('r-advice-list');al.innerHTML='';
+  advices.forEach(function(a){
+    var d=document.createElement('div');
+    d.className='flex gap-2 text-sm bg-blue-50 rounded-lg p-3';
+    d.innerHTML='<span class="flex-shrink-0">'+a.icon+'</span><span class="text-gray-700">'+a.text+'</span>';
+    al.appendChild(d);
+  });
+
+  document.getElementById('results').style.display='block';
+  document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+function reset(){document.getElementById('results').style.display='none';window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body>
+</html>
