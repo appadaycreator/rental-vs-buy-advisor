@@ -4,7 +4,7 @@
   "description": "年齢・年収・家族構成から賃貸と住宅購入の生涯コストを比較。ローン返済・管理費・売却想定価格を含めた総合判断を無料で診断します。",
   "start_url": "/rental-vs-buy-advisor/",
   "display": "standalone",
-  "background_color": "#f8faf9",
+  "background_color": "#ffffff",
   "theme_color": "#7c3aed",
   "lang": "ja",
   "icons": [
