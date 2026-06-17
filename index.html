@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Consent Mode v2 -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});(function(){try{var k='cookie-consent-v2',o='cookie-consent';var c=localStorage.getItem(k);if(!c&&localStorage.getItem(o)==='1')c='granted';if(c){var s=c==='granted'?'granted':'denied';gtag('consent','update',{'analytics_storage':s,'ad_storage':s,'ad_user_data':s,'ad_personalization':s});}}catch(e){}})();</script>
+<!-- End Consent Mode v2 -->
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
 new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
@@ -19,7 +22,8 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#7c3aed">
-<meta name="description" content="年齢・年収・家族構成から賃貸と住宅購入の生涯コストを比較。ローン返済・管理費・売却想定価格を含めた総合判断を無料で診断します。登録不要・完全無料でご利用いただけます。無料・登録不要でご利用いただけます。">
+<meta name="description" content="年齢・年収・家族構成から賃貸と住宅購入の生涯コストを比較。ローン返済・管理費・売却想定価格を含めた総合判断を無料で診断します">
+<meta name="author" content="AppADayCreator">
 <meta property="og:title" content="賃貸vs購入コスト比較 - 生涯コストを無料シミュレーション">
 <meta property="og:description" content="賃貸と住宅購入どちらがお得か。生涯コスト・ライフスタイルで総合診断。">
 <meta property="og:type" content="website">
@@ -30,7 +34,23 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="appadaycreator" />
 <link rel="canonical" href="https://appadaycreator.com/rental-vs-buy-advisor/">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "賃貸vs購入コスト比較", "description": "賃貸と住宅購入の生涯コストを比較診断", "url": "https://appadaycreator.com/rental-vs-buy-advisor/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "賃貸vs購入コスト比較",
+  "description": "賃貸と住宅購入の生涯コストを比較診断",
+  "url": "https://appadaycreator.com/rental-vs-buy-advisor/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "inLanguage": "ja"
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8427583028015858" crossorigin="anonymous"></script>
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","s3t9vl8h3v");</script>
 <script>window.onerror=function(m,s,l,c,e){console.warn('Error:',m);return true;};window.addEventListener('unhandledrejection',function(e){console.warn('Rejection:',e.reason);});</script>
@@ -95,8 +115,50 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
     padding: 10px 8px !important;
   }
 }
+
+/* M8: ツールチップ・ガイダンス強化 */
+.cursor-help {
+  cursor: help;
+  border-bottom: 1px dotted #9ca3af;
+  transition: all 0.2s;
+}
+.cursor-help:hover {
+  border-bottom-color: #4f46e5;
+  color: #4f46e5;
+}
+
+/* 入力欄のラベル補足 */
+.text-xs.text-gray-500 {
+  display: block;
+  margin-top: 0.375rem;
+  opacity: 0.9;
+}
+
+/* 達成度バーのアニメーション */
+#achievement-bar {
+  animation: slideIn 0.6s ease-out;
+}
+@keyframes slideIn {
+  from { width: 0 !important; }
+}
+
+/* 参考値・提案値の視覚的強調 */
+.text-gray-400[title], .text-gray-500[title] {
+  position: relative;
+}
+
+/* バリデーションエラーメッセージ */
+#validation-errors .bg-red-50 {
+  animation: slideDown 0.3s ease-out;
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"このサービスは無料ですか？","acceptedAnswer":{"@type":"Answer","text":"はい、完全無料・登録不要でご利用いただけます。"}},{"@type":"Question","name":"入力データはどこに保存されますか？","acceptedAnswer":{"@type":"Answer","text":"お使いのデバイス内にのみ保存されます。外部送信は行いません。"}},{"@type":"Question","name":"結果はどのくらい正確ですか？","acceptedAnswer":{"@type":"Answer","text":"あくまで参考情報です。重要な判断の際は専門家にご相談ください。"}},{"@type":"Question","name":"どのような人が使っていますか？","acceptedAnswer":{"@type":"Answer","text":"初心者から専門家まで、多くの方にご利用いただいています。特に決断が必要な場面で活躍します。"}},{"@type":"Question","name":"結果をシェアできますか？","acceptedAnswer":{"@type":"Answer","text":"はい、診断結果はスクリーンショットやURLで友人・家族とシェアできます。"}},{"@type":"Question","name":"有料プランはありますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ、すべての機能を完全無料でご利用いただけます。"}},{"@type":"Question","name":"計算結果は実際の金融商品に使えますか？","acceptedAnswer":{"@type":"Answer","text":"本ツールは参考情報の提供を目的としており、実際の投資・融資判断には専門家（ファイナンシャルプランナー等）にご相談ください。"}},{"@type":"Question","name":"入力した金額データはどこかに送られますか？","acceptedAnswer":{"@type":"Answer","text":"すべての計算はブラウザ内で完結します。サーバーへのデータ送信は一切行いません。"}}]}</script>
+
 
 <script type="application/ld+json">
 {
@@ -105,7 +167,11 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   "name": "appadaycreator",
   "url": "https://appadaycreator.com",
   "logo": "https://appadaycreator.com/logo.png",
-  "description": "無料Webサービス・診断ツール 180種類以上を運営"
+  "description": "無料Webサービス・診断ツール 180種類以上を運営",
+  "sameAs": [
+    "https://twitter.com/appadaycreate",
+    "https://appadaycreator.com"
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -168,87 +234,99 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
 
     <div class="space-y-5">
       <div>
-        <label class="text-sm font-bold text-gray-700">現在の年齢 <span class="text-xs text-gray-400" title="購入を検討している現在の年齢を入力してください">?</span></label>
+        <label class="text-sm font-bold text-gray-700">現在の年齢 <span class="text-xs text-gray-400 cursor-help" title="購入を検討している現在の年齢を入力。22〜60歳の範囲が対象です">?</span></label>
+        <p class="text-xs text-gray-500 mt-0.5">購入可能な年齢を入力してください</p>
         <div class="flex items-center gap-2 mt-1 input-flex">
           <input type="range" id="age" min="22" max="60" value="35" oninput="syncInput('age')" aria-label="年齢スライダー">
-          <input type="number" id="age-input" min="22" max="60" value="35" placeholder="35" class="w-16 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('age')" aria-label="年齢入力">
+          <input type="number" id="age-input" min="22" max="60" value="35" placeholder="例：35" class="w-16 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('age')" aria-label="年齢入力">
           <span class="text-blue-700 font-bold text-sm">歳</span>
         </div>
       </div>
 
       <div>
-        <label class="text-sm font-bold text-gray-700">世帯年収（万円） <span class="text-xs text-gray-400" title="配偶者がいる場合は合算してください">?</span></label>
+        <label class="text-sm font-bold text-gray-700">世帯年収（万円） <span class="text-xs text-gray-400 cursor-help" title="配偶者がいる場合は合算。ローン審査にはこの年収が参考になります">?</span></label>
+        <p class="text-xs text-gray-500 mt-0.5">税込年収の合計（夫婦合算の場合）</p>
         <div class="flex items-center gap-2 mt-1 input-flex">
           <input type="range" id="income" min="300" max="2000" step="50" value="600" oninput="syncInput('income')" aria-label="年収スライダー">
-          <input type="number" id="income-input" min="300" max="2000" step="50" value="600" placeholder="600万円" class="w-24 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('income')" aria-label="年収入力">
+          <input type="number" id="income-input" min="300" max="2000" step="50" value="600" placeholder="例：600" class="w-24 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('income')" aria-label="年収入力">
           <span class="text-blue-700 font-bold text-sm">万円</span>
         </div>
       </div>
 
       <div>
-        <label class="text-sm font-bold text-gray-700">現在の家賃（万円/月）</label>
+        <label class="text-sm font-bold text-gray-700">現在の家賃（万円/月） <span class="text-xs text-gray-400 cursor-help" title="共益費・管理費は含めずに家賃のみを入力してください">?</span></label>
+        <p class="text-xs text-gray-500 mt-0.5">毎月の家賃（更新料は別途計上）</p>
         <div class="flex items-center gap-2 mt-1 input-flex">
           <input type="range" id="rent" min="5" max="30" value="12" oninput="syncInput('rent')" aria-label="家賃スライダー">
-          <input type="number" id="rent-input" min="5" max="30" step="0.5" value="12" placeholder="12万円" class="w-20 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('rent')" aria-label="家賃入力">
+          <input type="number" id="rent-input" min="5" max="30" step="0.5" value="12" placeholder="例：12" class="w-20 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('rent')" aria-label="家賃入力">
           <span class="text-blue-700 font-bold text-sm">万円</span>
         </div>
       </div>
 
       <div>
-        <label class="text-sm font-bold text-gray-700">購入を検討している物件価格（万円）</label>
+        <label class="text-sm font-bold text-gray-700">購入を検討している物件価格（万円） <span class="text-xs text-gray-400 cursor-help" title="土地建物の合計価格。仲介手数料は含まず（別途諸費用で計上）">?</span></label>
+        <p class="text-xs text-gray-500 mt-0.5">新築一戸建て・マンションなど検討中の物件価格</p>
         <div class="flex items-center gap-2 mt-1 input-flex">
           <input type="range" id="price" min="1000" max="10000" step="100" value="4000" oninput="syncInput('price')" aria-label="物件価格スライダー">
-          <input type="number" id="price-input" min="1000" max="10000" step="100" value="4000" placeholder="4000万円" class="w-24 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('price')" aria-label="物件価格入力">
+          <input type="number" id="price-input" min="1000" max="10000" step="100" value="4000" placeholder="例：4000" class="w-24 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('price')" aria-label="物件価格入力">
           <span class="text-blue-700 font-bold text-sm">万円</span>
         </div>
       </div>
 
       <div>
-        <label class="text-sm font-bold text-gray-700">住宅ローン金利（%） <span class="text-xs text-gray-400" title="現在の相場は1.5〜3.0%程度。フラット35など商品により異なります">?</span></label>
+        <label class="text-sm font-bold text-gray-700">住宅ローン金利（%） <span class="text-xs text-gray-400 cursor-help" title="現在の相場は1.5〜3.0%程度。フラット35など商品により異なります">?</span></label>
+        <p class="text-xs text-gray-500 mt-0.5">適用予定の金利を入力。わからない場合は現在の相場を目安に</p>
         <div class="flex items-center gap-2 mt-1 input-flex">
           <input type="range" id="rate" min="0.4" max="3.5" step="0.1" value="1.5" oninput="syncInput('rate')" aria-label="金利スライダー">
-          <input type="number" id="rate-input" min="0.4" max="3.5" step="0.1" value="1.5" placeholder="1.5%" class="w-20 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('rate')" aria-label="金利入力">
+          <input type="number" id="rate-input" min="0.4" max="3.5" step="0.1" value="1.5" placeholder="例：1.5" class="w-20 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('rate')" aria-label="金利入力">
           <span class="text-blue-700 font-bold text-sm">%</span>
         </div>
+        <p class="text-xs text-gray-400 mt-1">📌 参考値：フラット35（1.5%前後）・変動金利（0.6%〜）</p>
       </div>
 
       <div>
-        <label class="text-sm font-bold text-gray-700">頭金割合（物件価格の何%） <span class="text-xs text-gray-400" title="10%以上が一般的。少ないと審査が厳しくなる場合があります">?</span></label>
+        <label class="text-sm font-bold text-gray-700">頭金割合（物件価格の何%） <span class="text-xs text-gray-400 cursor-help" title="10%以上が一般的。20%以上あると審査が有利になる場合があります">?</span></label>
+        <p class="text-xs text-gray-500 mt-0.5">準備できる自己資金を物件価格の何%にするか</p>
         <div class="flex items-center gap-2 mt-1 input-flex">
           <input type="range" id="downpayRate" min="0" max="30" step="5" value="10" oninput="syncInput('downpayRate')" aria-label="頭金割合スライダー">
-          <input type="number" id="downpayRate-input" min="0" max="30" step="5" value="10" placeholder="10%" class="w-16 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('downpayRate')" aria-label="頭金割合入力">
+          <input type="number" id="downpayRate-input" min="0" max="30" step="5" value="10" placeholder="例：10" class="w-16 border border-gray-300 rounded px-2 py-1 text-sm" oninput="syncSlider('downpayRate')" aria-label="頭金割合入力">
           <span class="text-blue-700 font-bold text-sm">%</span>
         </div>
-        <p class="text-xs text-gray-400 mt-1">頭金目安: <span id="downpay-preview">400万円</span></p>
+        <p class="text-xs text-gray-400 mt-1">💰 目安額: <span id="downpay-preview">400万円</span></p>
       </div>
 
       <div>
         <label class="flex items-center gap-2 text-sm font-bold text-gray-700 cursor-pointer">
           <input type="checkbox" id="taxDeduction" class="w-4 h-4 accent-blue-600" checked onchange="saveToLocalStorage()">
-          住宅ローン控除を適用する（年末残高×0.7%・13年間） <span class="text-xs text-gray-400" title="最大455万円の控除。実際の控除額は所得税額により異なります">?</span>
+          住宅ローン控除を適用する <span class="text-xs text-gray-400 cursor-help" title="年末残高×0.7%を13年間控除。最大455万円。要件確認が必要です">?</span>
         </label>
-        <p class="text-xs text-gray-400 mt-1">最大455万円の控除が購入コストを削減します</p>
+        <p class="text-xs text-gray-400 mt-1">年末ローン残高の0.7%を13年間控除（概算最大455万円）</p>
       </div>
 
       <div>
-        <label class="text-sm font-bold text-gray-700">居住予定期間 <span class="text-xs text-gray-400" title="短期（15年未満）だと売却損が出やすい傾向があります">?</span></label>
+        <label class="text-sm font-bold text-gray-700">居住予定期間 <span class="text-xs text-gray-400 cursor-help" title="短期（15年未満）だと売却損が出やすい傾向があります">?</span></label>
+        <p class="text-xs text-gray-500 mt-0.5">その物件に何年住む予定ですか</p>
         <select id="period" class="w-full border border-gray-300 rounded-lg p-2 mt-1 text-sm" title="予定している居住期間を選択してください" onchange="saveToLocalStorage()">
           <option value="10">10年</option>
-          <option value="20" selected>20年</option>
+          <option value="20" selected>20年（標準的）</option>
           <option value="30">30年</option>
           <option value="35">35年（完済まで）</option>
         </select>
       </div>
 
       <div>
-        <label class="text-sm font-bold text-gray-700">家族構成・将来計画</label>
-        <select id="family" class="w-full border border-gray-300 rounded-lg p-2 mt-1 text-sm" title="転勤可能性や定住志向に応じて選択してください" onchange="saveToLocalStorage()">
+        <label class="text-sm font-bold text-gray-700">家族構成・将来計画 <span class="text-xs text-gray-400 cursor-help" title="転勤や子育て計画で大きく異なります">?</span></label>
+        <p class="text-xs text-gray-500 mt-0.5">最も当てはまる状況を選択してください</p>
+        <select id="family" class="w-full border border-gray-300 rounded-lg p-2 mt-1 text-sm" onchange="saveToLocalStorage()">
           <option value="single">単身・DINKs（転勤・転職の可能性あり）</option>
           <option value="family" selected>夫婦＋子ども予定（安定を重視）</option>
           <option value="settled">子育て終了・定住希望</option>
         </select>
       </div>
     </div>
+
+    <!-- M2: バリデーションエラーメッセージ表示 -->
+    <div id="validation-errors" class="space-y-2 mt-4"></div>
 
     <button class="btn-primary mt-6" onclick="calculate()">生涯コストを比較する →</button>
   </div>
@@ -299,6 +377,33 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
           <tbody id="breakdown-body">
           </tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- M6: 目標設定・達成度トラッキング -->
+    <div class="card p-6 mb-4">
+      <h3 class="font-bold text-gray-800 mb-3">🎯 目標コスト設定・達成度トラッキング</h3>
+      <div class="space-y-4">
+        <div>
+          <label class="text-sm font-bold text-gray-700">目標購入コスト（万円） <span class="text-xs text-gray-400 cursor-help" title="購入時の最大支出目標を設定すると、達成率が自動計算されます">?</span></label>
+          <p class="text-xs text-gray-500 mt-0.5">予算の上限目標を設定すると進捗を追跡できます</p>
+          <input type="number" id="target-buy-cost" min="1000" max="10000" step="100" placeholder="例：3000" class="w-full border border-gray-300 rounded px-3 py-2 mt-1 text-sm" oninput="saveToLocalStorage()">
+          <p class="text-xs text-gray-400 mt-1">設定しない場合は進捗表示は表示されません</p>
+        </div>
+        <div id="achievement-stats" style="display:none;">
+          <div class="bg-blue-50 rounded-lg p-4 mb-3 border border-blue-200">
+            <div class="text-xs font-bold text-blue-700 mb-2">目標達成状況</div>
+            <div class="flex items-end gap-3 mb-2">
+              <div class="text-3xl font-bold text-blue-700" id="achievement-rate">-</div>
+              <div class="text-sm font-semibold text-blue-600" id="achievement-desc"></div>
+            </div>
+            <div class="w-full bg-gray-300 rounded-full h-3 mt-3">
+              <div id="achievement-bar" class="bg-blue-600 h-3 rounded-full transition-all" style="width:0%"></div>
+            </div>
+            <div class="text-xs text-gray-600 mt-2" id="achievement-breakdown"></div>
+          </div>
+          <div id="previous-comparison" class="text-sm text-gray-700 bg-gray-50 rounded p-3 border border-gray-200"></div>
+        </div>
       </div>
     </div>
 
@@ -359,7 +464,8 @@ function saveToLocalStorage(){
     downpayRate:document.getElementById('downpayRate').value,
     period:document.getElementById('period').value,
     family:document.getElementById('family').value,
-    taxDeduction:document.getElementById('taxDeduction').checked?'1':'0'
+    taxDeduction:document.getElementById('taxDeduction').checked?'1':'0',
+    targetBuyCost:document.getElementById('target-buy-cost').value
   };
   localStorage.setItem('rentalVsBuyFormData',JSON.stringify(data));
 }
@@ -377,6 +483,7 @@ function loadFromLocalStorage(){
     if(data.period)document.getElementById('period').value=data.period;
     if(data.family)document.getElementById('family').value=data.family;
     if(data.taxDeduction)document.getElementById('taxDeduction').checked=data.taxDeduction==='1';
+    if(data.targetBuyCost)document.getElementById('target-buy-cost').value=data.targetBuyCost;
   }catch(e){}
 }
 function loadFromURL(){
@@ -508,7 +615,42 @@ function drawChart(rentTotal,netBuyCost,diff){
   }
 }
 
+// M2: バリデーション関数
+function validateInputs(){
+  var errors=[];
+  var age=parseInt(document.getElementById('age').value);
+  var income=parseInt(document.getElementById('income').value);
+  var rent=parseFloat(document.getElementById('rent').value);
+  var price=parseInt(document.getElementById('price').value);
+  var rate=parseFloat(document.getElementById('rate').value);
+  var downpayRate=parseInt(document.getElementById('downpayRate').value);
+
+  if(isNaN(age)||age<22||age>60)errors.push('年齢は22〜60歳の範囲で入力してください');
+  if(isNaN(income)||income<300||income>2000)errors.push('年収は300〜2000万円の範囲で入力してください');
+  if(isNaN(rent)||rent<5||rent>30)errors.push('家賃は5〜30万円の範囲で入力してください');
+  if(isNaN(price)||price<1000||price>10000)errors.push('物件価格は1000〜10000万円の範囲で入力してください');
+  if(isNaN(rate)||rate<0.4||rate>3.5)errors.push('金利は0.4〜3.5%の範囲で入力してください');
+  if(isNaN(downpayRate)||downpayRate<0||downpayRate>30)errors.push('頭金割合は0〜30%の範囲で入力してください');
+
+  var errDiv=document.getElementById('validation-errors');
+  errDiv.innerHTML='';
+  if(errors.length>0){
+    errors.forEach(function(e){
+      var d=document.createElement('div');
+      d.className='bg-red-50 border border-red-200 text-red-700 rounded px-3 py-2 text-sm';
+      d.textContent='⚠️ '+e;
+      errDiv.appendChild(d);
+    });
+    return false;
+  }
+  return true;
+}
+
 function calculate(){
+  // M2: バリデーション実行
+  if(!validateInputs())return;
+
+  document.getElementById('validation-errors').innerHTML='';
   var age=parseInt(document.getElementById('age').value);
   var income=parseInt(document.getElementById('income').value);
   var rent=parseFloat(document.getElementById('rent').value);
@@ -634,6 +776,43 @@ function calculate(){
     d.innerHTML='<span class="flex-shrink-0">'+a.icon+'</span><span class="text-gray-700">'+a.text+'</span>';
     al.appendChild(d);
   });
+
+  // M6: 目標コスト達成度の計算・表示
+  var targetBuyCost=parseInt(document.getElementById('target-buy-cost').value);
+  if(!isNaN(targetBuyCost)&&targetBuyCost>0){
+    var achievementRate=Math.round((netBuyCost/targetBuyCost)*100);
+    var achievementPct=Math.min(100,Math.round((targetBuyCost/netBuyCost)*100));
+    var achievementRateEl=document.getElementById('achievement-rate');
+    var achievementDescEl=document.getElementById('achievement-desc');
+    var achievementBarEl=document.getElementById('achievement-bar');
+    var achievementBreakdownEl=document.getElementById('achievement-breakdown');
+    var statsEl=document.getElementById('achievement-stats');
+
+    achievementRateEl.textContent=achievementRate+'%';
+    if(achievementRate<=100){
+      achievementDescEl.textContent='✅ 目標達成可能';
+      achievementBarEl.style.background='#16a34a';
+      achievementBreakdownEl.textContent='目標: '+formatMoney(targetBuyCost)+' / 見積: '+formatMoney(netBuyCost)+' / 余裕: '+formatMoney(Math.max(0,targetBuyCost-netBuyCost));
+    }else{
+      achievementDescEl.textContent='⚠️ 目標超過';
+      achievementBarEl.style.background='#ef4444';
+      achievementBreakdownEl.textContent='目標: '+formatMoney(targetBuyCost)+' / 見積: '+formatMoney(netBuyCost)+' / 超過額: '+formatMoney(netBuyCost-targetBuyCost);
+    }
+    achievementBarEl.style.width=Math.min(100,achievementRate)+'%';
+
+    // M6: 前回との比較
+    var history=JSON.parse(localStorage.getItem('rentalVsBuyHistory')||'[]');
+    if(history.length>0){
+      var prevBuyCost=history[0].netBuyCost;
+      var diff=netBuyCost-prevBuyCost;
+      var diffPercent=Math.round((diff/prevBuyCost)*100);
+      var diffText=(diff>0?'↑ 増加':'↓ 減少')+' '+formatMoney(Math.abs(diff))+' ('+Math.abs(diffPercent)+'%)';
+      document.getElementById('previous-comparison').innerHTML='<strong>前回との比較:</strong> '+diffText+' <span class="text-xs">('+new Date(history[0].timestamp).toLocaleDateString('ja-JP')+')</span>';
+    }
+    statsEl.style.display='block';
+  }else{
+    document.getElementById('achievement-stats').style.display='none';
+  }
 
   document.getElementById('results').style.display='block';
   document.getElementById('results').scrollIntoView({behavior:'smooth'});
@@ -779,29 +958,23 @@ function copyResultText(){
   <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ8+DVKZVU+5PBE+5YJRM" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;background:#0369a1;color:#fff;padding:10px 18px;border-radius:8px;font-size:12px;font-weight:bold;text-decoration:none;">🏦 不動産購入の資金調達【丸の内AMS 不動産担保ローン】 →</a>
   <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3WJ8+DVKZVU+5PBE+5YJRM" alt="" loading="lazy">
 </section>
-<div style="background:#fafafa;border:1px solid #e2e8f0;border-radius:10px;padding:12px;margin:10px auto;max-width:680px;"><h2 style="font-size:13px;font-weight:700;margin-bottom:6px;color:#374151;">🔍 計算・判定の仕組み</h2><p style="font-size:12px;color:#6b7280;line-height:1.7;">入力された値を計算式やスコアリングロジックで処理し、あなたに合った結果を算出します。本ツールの結果はあくまで参考情報です。重要な判断の際は専門家にご相談ください。</p></div>
+<div style="background:#fafafa;border:1px solid #e2e8f0;border-radius:10px;padding:12px;margin:10px auto;max-width:680px;"><h2 style="font-size:13px;font-weight:700;margin-bottom:6px;color:#374151;">🔍 計算・判定の仕組み</h2></div>
 <section style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 16px;margin-top:16px;max-width:720px;margin-left:auto;margin-right:auto;">
   <h2 style="font-size:16px;font-weight:700;color:#1e293b;margin:0 0 16px;text-align:center;">❓ よくある質問（FAQ）</h2>
   <div style="max-width:680px;margin:0 auto;">
     <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 診断結果の精度はどのくらいですか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">本ツールは入力情報をもとにした参考情報の提供を目的としています。重要な判断の際は専門家や公式情報もあわせてご確認ください。</p>
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 賃貸と購入の生涯コストはどう比較しますか？ <span>▼</span></summary>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">賃貸は家賃・更新料の累計、購入は頭金・住宅ローン返済（金利反映）・管理費・固定資産税に売却想定価格を加味し、居住予定期間での総支出を比較します。金利や物価前提により結果は変わる試算です。</p>
     </details>
     <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. プライバシーは守られますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">入力された健康情報はサーバーに送信・保存されません。すべてお使いのブラウザ上で処理されます。</p>
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 年収や物件価格などの入力情報は安全ですか？ <span>▼</span></summary>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">入力した年齢・世帯年収・家賃・物件価格・ローン金利などはブラウザ内だけで計算され、外部に送信されません。氏名や口座などの個人情報は不要で、安心して資金計画の検討に利用できます。</p>
     </details>
+    
+    
     <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. このサービスは無料で使えますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">はい、完全無料でご利用いただけます。登録・ログイン不要で、すぐにお使いいただけます。</p>
-    </details>
-    <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 入力したデータはどこに保存されますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">入力データはサーバーに送信されません。お使いのブラウザ上でのみ処理されます。</p>
-    </details>
-    <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 何度でも使えますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">はい、何度でも無料でご利用いただけます。条件を変えてお試しいただけます。</p>
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 金利や居住期間を変えて試せますか？ <span>▼</span></summary>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">住宅ローン金利・頭金割合・居住予定期間・物件価格を変えて何度でも比較でき、ライフプランの変化に応じた損益分岐の検討に使えます。低金利・長期居住など複数シナリオの試算におすすめです。</p>
     </details>
   </div>
 </section>
@@ -824,60 +997,25 @@ function copyResultText(){
 </div>
 
     
-    <div class="max-w-2xl mx-auto px-4">
-<!-- phase8-social-proof -->
-    <div class="card p-5 mb-4">
-      <h3 class="font-bold text-gray-800 mb-3 text-sm">⭐ 利用者の声</h3>
-            <div class="space-y-3">
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px;">
-          <p class="text-xs text-gray-700">「30代で賃貸か購入か迷っていましたが、生涯コスト比較で判断基準が明確になりました。ローン控除の効果も知れて参考になります。」</p>
-          <p style="font-size:12px;color:#16a34a;" class="mt-1">— 田中さん（30代・会社員）★★★★★</p>
-        </div>
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px;">
-          <p class="text-xs text-gray-700">「ライフプランが変わりやすい職種なので、転勤リスクと賃貸・購入のメリット・デメリットが整理でき、決断に役立ちました。」</p>
-          <p style="font-size:12px;color:#16a34a;" class="mt-1">— 佐藤さん（40代・転勤族）★★★★★</p>
-        </div>
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px;">
-          <p class="text-xs text-gray-700">「子育て期に入り、学区重視で購入を検討中。具体的な数値で家族の判断も説得しやすくなりました。」</p>
-          <p style="font-size:12px;color:#16a34a;" class="mt-1">— 山本さん（50代・親）★★★★★</p>
-        </div>
-      </div>
-      <div class="flex gap-2 mt-4">
-        <a href="https://line.me/R/share?text=賃貸vs購入コスト比較 - 生涯コストを無料シミュレーション%20https://appadaycreator.com/rental-vs-buy-advisor/" target="_blank" rel="noopener"
-           style="flex:1;display:block;text-align:center;background:#06C755;color:white;padding:8px;border-radius:8px;font-size:12px;font-weight:bold;text-decoration:none;">
-          LINEでシェア
-        </a>
-        <a href="https://twitter.com/intent/tweet?text=賃貸vs購入コスト比較 - 生涯コストを無料シミュレーション&url=https://appadaycreator.com/rental-vs-buy-advisor/&via=appadaycreator" target="_blank" rel="noopener"
-           style="flex:1;display:block;text-align:center;background:#000;color:white;padding:8px;border-radius:8px;font-size:12px;font-weight:bold;text-decoration:none;">
-          Xでシェア
-        </a>
-      </div>
-    </div>
-    <section style="margin:32px auto;max-width:640px;padding:0 16px;" aria-labelledby="howto-h"><h2 id="howto-h" style="font-size:1.15rem;font-weight:700;margin-bottom:10px;border-left:4px solid #7c3aed;padding-left:10px;">使い方</h2><ol style="padding-left:20px;line-height:1.9;color:#374151;"><li>ページを開き、入力フォームの項目を確認する</li><li>必要な情報を入力または選択する</li><li>実行ボタンをクリックして結果を取得する</li><li>表示された結果・アドバイスを確認する</li><li>必要に応じてコピー・SNSシェアで活用する</li></ol></section>
-</div>
+
 <!-- r31-use-cases -->
 <div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
 <h2 style="font-size:1.125rem;font-weight:700;margin:0 0 1rem;color:#1e293b;border-left:4px solid #4f46e5;padding-left:10px">こんな方・シーンで役立ちます</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem">
 <div style="padding:1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem">
-<div style="font-size:1.5rem;margin-bottom:.4rem">👨‍💼</div>
-<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">給与所得者の節税対策</div>
-<div style="font-size:.85rem;color:#64748b;line-height:1.7">iDeCoやふるさと納税、医療費控除を最大限活用して手取りを増やしたい会社員の方に。年収・扶養家族の状況を入力するだけで節税額の目安が分かります。</div>
-</div>
-<div style="padding:1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem">
-<div style="font-size:1.5rem;margin-bottom:.4rem">👩‍👦</div>
-<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">子育て世帯の家計管理</div>
-<div style="font-size:.85rem;color:#64748b;line-height:1.7">教育費・保育費・習い事費用の将来見通しを立て、無理のない貯蓄計画を作りたい共働き家庭に。月々の支出を整理するきっかけになります。</div>
-</div>
-<div style="padding:1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem">
 <div style="font-size:1.5rem;margin-bottom:.4rem">🏠</div>
-<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">住宅購入・マイホーム計画</div>
-<div style="font-size:.85rem;color:#64748b;line-height:1.7">頭金・月々の返済額・総支払額をシミュレーションして、無理のない住宅ローン計画を立てたい方に。金利変動のリスクも考慮できます。</div>
+<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">住宅購入を検討している方</div>
+<div style="font-size:.85rem;color:#64748b;line-height:1.7">年収・自己資金・希望エリアから借入可能額と月々の返済額を試算して、現実的な購入計画を立てたい方に。</div>
 </div>
 <div style="padding:1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem">
 <div style="font-size:1.5rem;margin-bottom:.4rem">📊</div>
-<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">資産運用・老後資金準備</div>
-<div style="font-size:.85rem;color:#64748b;line-height:1.7">NISAやiDeCoで積立投資を始めて、老後に必要な資産を計画的に形成したい方に。複利効果を視覚化して長期投資のモチベーションを維持できます。</div>
+<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">ローン返済計画を立てたい方</div>
+<div style="font-size:.85rem;color:#64748b;line-height:1.7">繰り上げ返済の効果や変動・固定金利の比較など、より有利なローンの組み方を検討している方に。総返済額の差が分かります。</div>
+</div>
+<div style="padding:1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem">
+<div style="font-size:1.5rem;margin-bottom:.4rem">🔄</div>
+<div style="font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:.4rem">賃貸 vs 購入で迷っている方</div>
+<div style="font-size:.85rem;color:#64748b;line-height:1.7">生涯コストや資産価値を比較して、自分のライフスタイルに合った選択をしたい方に。客観的なデータで判断の参考にできます。</div>
 </div>
 </div>
 </div>
@@ -885,23 +1023,10 @@ function copyResultText(){
 <div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
 <div style="background:white;border-radius:16px;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,.08)">
 <h2 style="font-size:1.05rem;font-weight:700;margin:0 0 1rem;border-left:4px solid #4f46e5;padding-left:10px;color:#1e293b">よくある質問（詳細）</h2>
-<div style="margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #f1f5f9">
-<p style="font-size:.9rem;font-weight:700;color:#1e293b;margin:0 0 .5rem">Q: 税金や保険の計算はどの程度正確ですか？</p>
-<p style="font-size:.85rem;color:#475569;line-height:1.8;margin:0">A: 本ツールは公的機関発表の標準的な税率・係数を使用した参考計算ツールです。実際の税額は収入の種類・控除の適用有無・家族構成等によって変わります。正確な申告額は国税庁のe-Taxまたは税理士にご確認ください。</p>
+<div style="margin-top:12px;display:flex;flex-direction:column;gap:12px">
+<div style="border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px"><p style="font-weight:600;color:#1e293b;margin:0 0 6px">Q. 住宅ローン控除（減税）の仕組みを教えてください</p><p style="font-size:.875rem;color:#475569;line-height:1.8;margin:0">住宅ローン控除（住宅借入金等特別控除）は、住宅ローンを利用して住宅を取得した際に、所得税・住民税から控除を受けられる制度です。2024年以降の主な内容として「控除率：年末のローン残高の0.7%」「控除期間：新築・認定住宅は最長13年（その他は最長10年）」「最大控除額：住宅の種類・入居年によって異なります（認定省エネ住宅等は拡充）」があります。初年度は確定申告が必要で、2年目以降は年末調整で対応できます。省エネ性能（ZEH・省エネ基準適合）によって上限額が変わるため、購入前に確認してください。</p></div>
+<div style="border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px"><p style="font-weight:600;color:#1e293b;margin:0 0 6px">Q. 住宅購入で後悔しないための注意点は？</p><p style="font-size:.875rem;color:#475569;line-height:1.8;margin:0">住宅購入で後悔しやすいポイントと対策として「通勤時間の過小評価（実際に朝の通勤時間に現地を歩いてみる）」「収納スペースの少なさ（荷物量と比較して確認する）」「近隣環境・騒音（平日・休日・朝夜と時間を変えて複数回訪問）」「修繕コストの見落とし（マンション：修繕積立金の増額見込み・一戸建て：屋根・外壁等の定期修繕費）」「将来の家族構成変化（子どもの成長・親の同居等）」があります。焦って決めず、複数物件を比較し、信頼できる不動産エージェントに相談することをおすすめします。</p></div>
 </div>
-<div style="margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #f1f5f9">
-<p style="font-size:.9rem;font-weight:700;color:#1e293b;margin:0 0 .5rem">Q: NISA・iDeCoの制度は変わりましたか？</p>
-<p style="font-size:.85rem;color:#475569;line-height:1.8;margin:0">A: 2024年1月から新NISAが始まり、年間投資枠が最大360万円に拡大されました。また非課税保有期間が無制限になりました。iDeCoの掛金上限も職業によって異なります。最新情報は金融庁・国税庁の公式サイトでご確認ください。</p>
-</div>
-<div style="margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #f1f5f9">
-<p style="font-size:.9rem;font-weight:700;color:#1e293b;margin:0 0 .5rem">Q: 計算結果をFPや税理士に見せることはできますか？</p>
-<p style="font-size:.85rem;color:#475569;line-height:1.8;margin:0">A: はい、スクリーンショットやブラウザの印刷機能（PDF保存）で計算結果を保存してFP・税理士との相談資料としてご活用いただけます。専門家への相談時に現状を正確に伝えるうえで有効です。</p>
-</div>
-<div style="margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #f1f5f9">
-<p style="font-size:.9rem;font-weight:700;color:#1e293b;margin:0 0 .5rem">Q: 副業収入がある場合の税計算はどうすればいいですか？</p>
-<p style="font-size:.85rem;color:#475569;line-height:1.8;margin:0">A: 副業収入（雑所得・事業所得）は確定申告が必要です。年間20万円を超える副業収入がある場合は翌年3月15日までに確定申告を行う必要があります。経費の計上方法は収入の種類によって異なりますので、国税庁のタックスアンサーを参考にしてください。</p>
-</div>
-
 </div>
 </div>
 <!-- r31-tool-notice -->
@@ -933,66 +1058,25 @@ function copyResultText(){
 <div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
 <div style="padding:1.25rem 1.5rem;background:#f0f9ff;border:1px solid #bae6fd;border-radius:.75rem">
 <h3 style="font-size:1rem;font-weight:700;margin:0 0 .75rem;color:#0c4a6e">ℹ️ このツールについて</h3>
-<p style="margin:0;font-size:.88rem;color:#0c4a6e;line-height:1.9">「賃貸 vs 購入コスト比較」はAppADayCreatorが提供する無料Webツールです。お金・家計に関する情報を素早く手軽に確認できます。会員登録・アプリインストール不要で、ブラウザからすぐにご利用いただけます。すべての処理はブラウザ内で完結するため、入力した情報が外部サーバーに送信されることはなく、プライバシーも保護されます。スマートフォン・タブレット・PCのすべてに対応したレスポンシブデザインを採用し、外出先や通勤中でも快適にご利用いただけます。AppADayCreatorでは、日常生活のあらゆるシーンで役立つWebツールを400本以上無料で提供しています。金融・健康・育児・キャリア・旅行など幅広いカテゴリのツールをご活用ください。</p>
+<p style="margin:0;font-size:.88rem;color:#0c4a6e;line-height:1.9">「賃貸 vs 購入コスト比較」はAppADayCreatorが提供する無料Webツールです。お金・家計に関する情報を素早く手軽に確認できます。会員登録・アプリインストール不要で、ブラウザからすぐにご利用いただけます。すべての処理はブラウザ内で完結するため、入力した情報が外部サーバーに送信されることはなく、プライバシーも保護されます。AppADayCreatorでは、日常生活のあらゆるシーンで役立つWebツールを400本以上無料で提供しています。金融・健康・育児・キャリア・旅行など幅広いカテゴリのツールをご活用ください。</p>
 </div>
 </div>
 <!-- r31-extra-guide -->
 <div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
 <div style="background:white;border-radius:16px;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,.06)">
-<h2 style="font-size:1.05rem;font-weight:700;margin:0 0 1rem;border-left:4px solid #10b981;padding-left:10px;color:#1e293b">お金・家計ツールの活用ガイド</h2>
-<p style="font-size:.88rem;color:#475569;line-height:1.9;margin:0 0 .75rem">
-本ツール「賃貸 vs 購入コスト比較」は、お金・家計に関連する情報の確認・計算・診断をブラウザ上で手軽に行えるように設計されています。
-初回利用時にはまずフォームや入力欄に必要な情報を入力し、「計算」「診断」「確認」などのボタンを押してください。
-結果はリアルタイムで表示され、条件を変えながら何度でも再計算・再診断をお試しいただけます。
-ご不明な点があった場合は、各入力項目の横にある説明文や「？」アイコンをご確認ください。
-</p>
-<p style="font-size:.88rem;color:#475569;line-height:1.9;margin:0 0 .75rem">
-スマートフォンからのご利用でも、PC同様にすべての機能をお使いいただけます。
-スマートフォンのホーム画面に本ページを追加（ブックマーク）すれば、アプリのように素早くアクセスできます。
-ブラウザの印刷機能（Ctrl+P または右上メニュー）を使えば、結果をPDF形式で保存・印刷することが可能です。
-計算結果のスクリーンショットを家族・友人・専門家と共有するのもお勧めです。
-</p>
-<h3 style="font-size:.95rem;font-weight:700;margin:1rem 0 .6rem;color:#1e293b">AppADayCreator のツールの特徴</h3>
-<ul style="margin:0;padding-left:1.25rem;font-size:.88rem;color:#475569;line-height:2.1">
-<li><strong>完全無料・登録不要</strong> — アカウント作成・メールアドレス登録なしで今すぐご利用いただけます</li>
-<li><strong>プライバシー完全保護</strong> — 入力したデータはすべてブラウザ内で処理され、外部サーバーには一切送信されません</li>
-<li><strong>マルチデバイス完全対応</strong> — スマートフォン・タブレット・PCすべてで最適なレイアウトで表示されます</li>
-<li><strong>定期的なコンテンツ更新</strong> — 法改正・制度変更・最新データに対応した情報を随時更新しています</li>
-<li><strong>広告による持続的な無料運営</strong> — 広告収入によって運営しているため、ユーザーの皆様は永続的に無料でご利用いただけます</li>
-<li><strong>400本以上のツールを無料提供</strong> — お金・健康・育児・キャリア・旅行・住まいなど幅広いジャンルのツールをご活用ください</li>
-</ul>
 <h3 style="font-size:.95rem;font-weight:700;margin:1.25rem 0 .6rem;color:#1e293b">関連ツールのご紹介</h3>
-<p style="font-size:.88rem;color:#475569;line-height:1.9;margin:0">
-AppADayCreatorでは、本ツール以外にもお金・家計カテゴリの便利なツールを多数ご提供しています。
-家計管理・健康記録・育児サポート・キャリア計画・旅行準備・住まいの整理など、日常生活のさまざまなシーンで役立つツールがそろっています。
-ぜひトップページから他のツールもご活用ください。すべて完全無料・登録不要でお使いいただけます。
-本ツールへのご意見・ご感想はお問い合わせページからお送りいただけます。皆様のフィードバックが品質改善につながります。
-</p>
+
 </div>
 </div>
 
-<!-- rakuten-affiliate-block -->
-    <div style="border:1px solid #BF0000;background:#fff9f9;border-radius:10px;padding:14px;margin:12px auto;max-width:480px;text-align:center;">
-      <p style="font-size:0.85rem;color:#4b5563;margin-bottom:8px;">🛒 関連商品を楽天市場で探す</p>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/541ad0d2.ce2bed12.541ad0d3.a1a2318c/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E8%25B3%2583%25E8%25B2%25B8%2520%25E6%258C%2581%25E3%2581%25A1%25E5%25AE%25B6%2520%25E6%25AF%2594%25E8%25BC%2583%2F&link_type=text" target="_blank" rel="nofollow sponsored noopener"
-         style="display:inline-block;background:#BF0000;color:white;padding:10px 24px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">
-        楽天市場で「賃貸 持ち家 比較」を検索 →
-      </a>
-    </div>
 <!-- phase10-rakuten-updated -->
 <!-- phase10-faq-enhanced -->
 
 <div style="margin:24px auto;max-width:720px;padding:16px 20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;">
   <p style="font-size:12px;font-weight:600;color:#94a3b8;text-align:center;margin:0 0 12px;letter-spacing:0.05em;">スポンサーリンク</p>
   <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+2IK7AI+136+1BQJAA" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">★回答者全員に5000円★新築マンション・新築一戸建て購入者アンケート【SUUMO】</a><img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4B3WJ6+2IK7AI+136+1BQJAA" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">日々の生活にハッピーをプラス！《ハピタス》</a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ7+18PTPM+1O96+699KI" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">《ヨガ》をはじめてみませんか？ホットヨガスタジオLAVA</a><img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4B3WJ7+18PTPM+1O96+699KI" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+FIIWRU+1IRY+1TKOKI" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">ファイナンシャルアカデミー「お金の教養講座」</a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B3WJ6+FIIWRU+1IRY+1TKOKI" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+36YZ3E+3A66+5YRHE" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">【販売本数No.1】ウイルスバスター</a><img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4B3WJ6+36YZ3E+3A66+5YRHE" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3VR6+GFV6NE+3CJQ+64C3M" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">本・雑誌・ビジネス書が聴ける【audiobook.jp】</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3VR6+GFV6NE+3CJQ+64C3M" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ5+C2OQY2+14CS+68EPE" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">【じゃらんnet】宿・ホテル予約</a><img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4B3WJ5+C2OQY2+14CS+68EPE" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ7+C3A6JU+4Z92+65ME9" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-flex;align-items:center;padding:8px 14px;background:#ffffff;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;color:#334155;text-decoration:none;white-space:nowrap;">【求人数No.1】リゾートバイト・日本を楽しもう【ダイブ】</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3WJ7+C3A6JU+4Z92+65ME9" alt="">
+    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">日々の生活にハッピーをプラス！《ハピタス》</a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" alt="">
+    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ5+C2OQY2+14CS+68EPE" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">【じゃらん】国内25,000軒の宿をネットで予約OK！2％ポイント還元！</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3WJ5+C2OQY2+14CS+68EPE" alt="">
   </div>
 </div>
 
@@ -1012,9 +1096,7 @@ AppADayCreatorでは、本ツール以外にもお金・家計カテゴリの便
   
 <div style="background:#f0f7ff;border:1px solid #bfdbfe;border-radius:12px;padding:1.5rem 1.75rem;margin:2rem 0" id="tool-desc-box">
   <h2 style="font-size:1.05rem;font-weight:800;color:#1e40af;margin:0 0 1rem">📋 このツールの詳細</h2>
-  <p style="color:#374151;margin:0 0 .75rem;line-height:1.8">「賃貸 vs 購入コスト比較」は、あなたの状況に合わせたアドバイスを提供する無料の診断・アドバイスツールです。</p>
-  <p style="color:#374151;margin:0 0 .75rem;line-height:1.8">いくつかの質問に答えるだけで、あなたに最適な提案や判断基準をわかりやすく提示します。</p>
-  <p style="color:#374151;margin:0;line-height:1.8">情報収集や比較検討の時間を大幅に短縮できるので、迷っているときの第一歩として活用いただけます。</p>
+  <p style="color:#374151;margin:0 0 .75rem;line-height:1.8">「賃貸 vs 購入コスト比較」は、年齢・年収・家族構成から賃貸と住宅購入の生涯コストを比較。ローン返済・管理費・売却想定価格を含めた総合判断を無料で診断します。</p>
 </div>
 <div style="background:#eaf4fb;border-left:4px solid #1976d2;padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0">
   <h3 style="font-size:1.1rem;font-weight:800;color:#1e3a5f">このツールでできること</h3>
@@ -1063,7 +1145,6 @@ AppADayCreatorでは、本ツール以外にもお金・家計カテゴリの便
       </tr>
     </tbody>
   </table>
-  <p style="font-size:.78rem;color:#6b7280;margin:.5rem 0 0">※ 記載データは各出典の公表時点の情報です。最新情報は各公的機関の公式サイトをご確認ください。</p>
 </div>
 <!-- r20-tool-links -->
 <div id="tool-disclaimer" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:.875rem">
@@ -1073,12 +1154,12 @@ AppADayCreatorでは、本ツール以外にもお金・家計カテゴリの便
 </div>
 <h2 id="faq-h" style="font-size:1.05rem;font-weight:700;margin-bottom:12px;border-left:4px solid #4f46e5;padding-left:10px;">よくある質問</h2>
   <dl style="line-height:1.8;">
-    <dt style="font-weight:600;margin-top:12px;">Q: 診断結果はどう活用すればいいですか？</dt>
-    <dd style="margin-left:16px;color:#374151;">賃貸vs購入コスト比較 - 生涯コスに関する判断・選択の参考情報としてご活用ください。条件を変えて複数回試してみてください。</dd>
-    <dt style="font-weight:600;margin-top:12px;">Q: 診断を繰り返し使えますか？</dt>
-    <dd style="margin-left:16px;color:#374151;">はい、条件を変えて何度でも診断いただけます。異なるシナリオの比較に役立ちます。</dd>
-    <dt style="font-weight:600;margin-top:12px;">Q: 入力したデータはどこに保存されますか？</dt>
-    <dd style="margin-left:16px;color:#374151;">すべての処理はブラウザ内で完結します。データがサーバーに送信されることはありません。</dd>
+    <dt style="font-weight:600;color:#1e293b;padding:8px 0 4px">Q. 賃貸と住宅購入、どちらが生涯コストで安いですか？</dt>
+    <dd style="font-size:.875rem;color:#475569;margin:0 0 12px;padding-left:12px;line-height:1.8">賃貸vs購入の生涯コストは居住地・家族構成・ライフスタイルによって大きく異なります。一般的な試算として「購入（30年ローン）」では毎月の返済＋固定資産税・修繕積立・管理費等の維持費が発生しますが、30年後に資産（不動産）が残ります。「賃貸」は自由に引越しできる柔軟性がありますが、払い続けた家賃は資産になりません。金利・地価の変動・老後の住まい方を考慮した上でのシミュレーションが重要です。本ツールで条件を入力して比較してみてください。</dd>
+    <dt style="font-weight:600;color:#1e293b;padding:8px 0 4px">Q. 住宅ローンを組む際の頭金はどれくらい必要ですか？</dt>
+    <dd style="font-size:.875rem;color:#475569;margin:0 0 12px;padding-left:12px;line-height:1.8">住宅ローンの頭金の目安は「物件価格の10〜20%」が一般的に推奨されています。例えば3,000万円の物件なら300〜600万円が目安です。頭金0円（フルローン）でも借り入れは可能ですが「借入額が増えて利息負担が大きくなる」「金利が高いプランしか選べないケースがある」「月々の返済額が増える」デメリットがあります。一方で頭金を貯める間の家賃負担や、手元の現金を一定程度残しておく必要性（生活防衛資金）も考慮が必要です。2024年以降の金利動向も含めて総合的に判断することをおすすめします。</dd>
+    <dt style="font-weight:600;color:#1e293b;padding:8px 0 4px">Q. マンション購入と戸建て購入、どちらが向いていますか？</dt>
+    <dd style="font-size:.875rem;color:#475569;margin:0 0 12px;padding-left:12px;line-height:1.8">マンションは「管理・共用部分の維持はマネジメント会社が行う」「防犯・防音面では立地・階数次第」「駅近物件が多く利便性が高い」という特徴があります。戸建ては「土地も資産になる」「増改築・リフォームの自由度が高い」「管理費・修繕積立金が不要」という特徴があります。選択のポイントとして「庭・駐車場が欲しいか」「将来的に売却・賃貸に出す可能性があるか（マンションは流動性が高い）」「管理の手間をかけたくないか」などが基準になります。家族構成・将来計画を考慮した上で検討してください。</dd>
   </dl>
 </section>
 <div style="background:#eef2ff;border-left:4px solid #4f46e5;border-radius:.5rem;padding:1rem 1.25rem;margin:1.5rem auto;max-width:760px;font-size:.875rem">
@@ -1100,5 +1181,20 @@ AppADayCreatorでは、本ツール以外にもお金・家計カテゴリの便
   }, {passive:true});
 })();
 </script>
+<div style="text-align:center;margin:20px auto;max-width:728px;padding:0 16px">
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8427583028015858" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>try{(adsbygoogle = window.adsbygoogle || []).push({});}catch(e){}</script>
+</div>
+<!-- r31-cookie-banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#f1f5f9;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;z-index:9999;font-size:.85rem;box-shadow:0 -2px 10px rgba(0,0,0,.3)">
+<div>当サイトはCookieおよびGoogle Analyticsを使用しています。<a href="/privacy-policy.html" style="color:#60a5fa;text-decoration:underline">プライバシーポリシー</a>をご確認ください。</div>
+<button onclick="document.getElementById('cookie-banner').style.display='none';window.grantConsent && window.grantConsent()" style="background:#3b82f6;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:.375rem;font-size:.85rem;font-weight:600;cursor:pointer;white-space:nowrap">同意して閉じる</button>
+</div>
+<script>if(localStorage.getItem('cookie-consent'))document.getElementById('cookie-banner').style.display='none'</script>
+<!-- r46-org-footer -->
+<div style="text-align:center;font-size:11px;color:#9ca3af;padding:6px 0 4px;background:#f8fafc;border-top:1px solid #e5e7eb;">
+  運営: <a href="https://appadaycreator.com/" style="color:#9ca3af;text-decoration:none;">AppADayCreator</a> | <a href="https://tech-and-brace.co.jp/" rel="noopener" style="color:#9ca3af;text-decoration:none;">株式会社Tech&amp;Brace</a>
+</div>
+<script src="/assets/consent-mode.js"></script>
 </body>
 </html>
